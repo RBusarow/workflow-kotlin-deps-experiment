@@ -31,3 +31,5 @@ dependencyResolutionManagement {
     // maven { url = java.net.URI.create("https://androidx.dev/snapshots/builds/8224905/artifacts/repository") }
   }
 }
+
+enableFeaturePreview("VERSION_CATALOGS")
