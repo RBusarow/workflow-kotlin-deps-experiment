@@ -1,5 +1,9 @@
 {
   "$schema" : "https://docs.renovatebot.com/renovate-schema.json",
+  "labels" : [
+    "dependencies",
+    "automerge"
+  ],
   "extends" : [
     "config:base"
   ],
@@ -19,6 +23,6 @@
         "^androidx\\.lifecycle:(?:[\\w-]+)$"
       ],
       "groupName" : "androidx lifecycle and downstream things"
-    },
+    }
   ]
 }
