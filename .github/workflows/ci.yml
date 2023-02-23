@@ -1,0 +1,39 @@
+name : CI
+
+on :
+  push :
+    branches :
+      - main
+  pull_request :
+  merge_group :
+
+jobs :
+
+  cancel-stale-jobs :
+    runs-on : ubuntu-latest
+    steps :
+      # If CI is already running for a branch when that branch is updated, cancel the older jobs.
+      - name : Cancel Stale Jobs
+        uses : styfle/cancel-workflow-action@0.9.1
+        env :
+          GITHUB_TOKEN : '${{ secrets.GITHUB_TOKEN }}'
+
+  dokka :
+    name : Assemble & Dokka
+    runs-on : ubuntu-latest
+    timeout-minutes : 20
+    steps :
+      - uses : actions/checkout@v3
+      - name : set up JDK 11
+        uses : actions/setup-java@v3
+        with :
+          distribution : 'zulu'
+          java-version : 11
+
+      ## Actual task
+      - uses : gradle/gradle-build-action@v2
+        name : Assemble with gradle — make sure everything builds
+        with :
+          arguments : |
+            assemble --stacktrace
+          cache-read-only : false
