@@ -19,7 +19,7 @@ jobs :
           GITHUB_TOKEN : '${{ secrets.GITHUB_TOKEN }}'
 
   dokka :
-    name : Assemble & Dokka
+    name : Check
     runs-on : ubuntu-latest
     timeout-minutes : 20
     steps :
@@ -30,10 +30,8 @@ jobs :
           distribution : 'zulu'
           java-version : 11
 
-      ## Actual task
       - uses : gradle/gradle-build-action@v2
-        name : Assemble with gradle — make sure everything builds
+        name : check with gradle
         with :
-          arguments : |
-            assemble --stacktrace
+          arguments : check --stacktrace
           cache-read-only : false
