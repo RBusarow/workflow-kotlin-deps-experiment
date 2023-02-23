@@ -1,5 +1,9 @@
 {
   "$schema" : "https://docs.renovatebot.com/renovate-schema.json",
+  "labels" : [
+    "dependencies",
+    "automerge"
+  ],
   "extends" : [
     "config:base"
   ],
@@ -10,7 +14,7 @@
         "^androidx\\.compose\\.compiler:(?:[\\w-]+)$",
         "^com\\.google\\.devtools\\.ksp:(?:[\\w-]+)$"
       ],
-      "groupName" : "kotlin, compose compiler, KSP"
+      "groupName" : "Kotlin and compiler plugins"
     },
     {
       "matchPackagePatterns" : [
@@ -18,7 +22,7 @@
         "^androidx\\.fragment:(?:[\\w-]+)$",
         "^androidx\\.lifecycle:(?:[\\w-]+)$"
       ],
-      "groupName" : "androidx lifecycle and downstream things"
-    },
+      "groupName" : "androidx lifecycle and downstream libs"
+    }
   ]
 }

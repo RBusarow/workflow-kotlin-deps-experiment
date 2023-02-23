@@ -9,27 +9,9 @@ buildscript {
     classpath(libs.google.ksp)
     classpath(libs.vanniktech.publish)
   }
-
-  repositories {
-    mavenCentral()
-    gradlePluginPortal()
-    google()
-    // For binary compatibility validator.
-    maven { url = uri("https://kotlin.bintray.com/kotlinx") }
-  }
 }
 
 plugins {
   base
-}
-
-subprojects {
-
-  afterEvaluate {
-    configurations.configureEach {
-      // There could be transitive dependencies in tests with a lower version. This could cause
-      // problems with a newer Kotlin version that we use.
-      resolutionStrategy.force(libs.kotlin.reflect)
-    }
-  }
+  kotlin("jvm") version "1.7.20"
 }
