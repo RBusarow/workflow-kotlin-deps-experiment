@@ -39,7 +39,7 @@ dependencyGuard = "0.1.0"
 
 google-accompanist = "0.18.0"
 google-dagger = "2.40.5"
-google-ksp = "1.7.20-1.0.8"
+google-ksp = "1.8.10-1.0.9"
 google-material = "1.4.0"
 
 groovy = "3.0.9"
