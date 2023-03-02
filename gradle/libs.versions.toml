@@ -181,7 +181,7 @@ google-ksp = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin
 
 hamcrest = "org.hamcrest:hamcrest-core:2.2"
 
-jetbrains-annotations = "org.jetbrains:annotations:19.0.0"
+jetbrains-annotations = "org.jetbrains:annotations:24.0.1"
 
 junit = { module = "junit:junit", version.ref = "jUnit" }
 
